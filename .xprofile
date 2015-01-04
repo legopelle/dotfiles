@@ -1,0 +1,14 @@
+#Set keyboard map to Swedish
+setxkbmap -layout se -variant nodeadkeys
+
+#Set up function keys
+xbindkeys
+
+#Turn on keyboard backlight
+sudo ~/bin/kbdledup
+
+alias goincignito="sshuttle -r legopelle@oc.rationell.nu 0/0 -vv"
+
+
+
+owncloud &
