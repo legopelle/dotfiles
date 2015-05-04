@@ -17,16 +17,28 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'methane/YouCompleteMe'
 
 "set tags+=/home/legopelle/.vim/tags/python.ctags
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+"let g:ycm_key_list_select_completion=[]
+"let g:ycm_key_list_previous_completion=[]
 "let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_filetype_blacklist = {
+"      \ 'tagbar' : 1,
+"      \ 'qf' : 1,
+"      \ 'notes' : 1,
+"      \ 'markdown' : 1,
+"      \ 'unite' : 1,
+"      \ 'text' : 1,
+"      \ 'vimwiki' : 1,
+"      \ 'pandoc' : 1,
+"      \ 'infolog' : 1,
+"      \ 'mail' : 1,
+"      \ 'python' : 1
+"      \}
 
-
-"Plugin 'davidhalter/jedi-vim'
-"let g:jedi#force_py_version = 3
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#force_py_version = 3
 "let g:jedi#use_tabs_not_buffers = 0
 
 " Track the engine.
@@ -50,11 +62,10 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ["flake8"]
-let g:syntastic_html_checkers = ["bootlint"]
-let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_javascript_checkers = ['jshint']
 
 Plugin 'jelera/vim-javascript-syntax'
 
@@ -62,24 +73,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/vim-distinguished'
 
 Plugin 'pangloss/vim-javascript'
-
 Plugin 'nathanaelkane/vim-indent-guides'
-let delimitMate_expand_cr = 1
 
-Plugin 'marijnh/tern_for_vim'
-
-Plugin 'vim-scripts/HTML-AutoCloseTag'
+imap <C-c> <CR><Esc>O
 
 Plugin 'scrooloose/nerdtree'
-
-Plugin 'tpope/vim-fugitive'
-
-Plugin 'airblade/vim-gitgutter'
-
-Plugin 'bling/vim-airline'
-
-Plugin 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -89,7 +87,7 @@ filetype plugin indent on    " required
 " ---- "
 "
 syntax on
-filetype indent on
+
 
 set number
 
@@ -117,4 +115,3 @@ set t_Co=256
 colorscheme distinguished
 set background=dark
 
-set laststatus=2
